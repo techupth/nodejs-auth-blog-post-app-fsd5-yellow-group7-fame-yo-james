@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const AuthContext = React.createContext();
+
+
+const HOST = "http://localhost:4000"
 
 function AuthProvider(props) {
   const [state, setState] = useState({
@@ -9,6 +13,8 @@ function AuthProvider(props) {
     user: null,
   });
 
+  const navigate = useNavigate();
+
   const login = () => {
     // 🐨 Todo: Exercise #4
     //  ให้เขียน Logic ของ Function `login` ตรงนี้
@@ -16,11 +22,19 @@ function AuthProvider(props) {
     //  ที่สร้างไว้ด้านบนพร้อมกับ Body ที่กำหนดไว้ในตารางที่ออกแบบไว้
   };
 
-  const register = () => {
+  const register = async (newUser) => {
     // 🐨 Todo: Exercise #2
     //  ให้เขียน Logic ของ Function `register` ตรงนี้
     //  Function register ทำหน้าที่สร้าง Request ไปที่ API POST /register
     //  ที่สร้างไว้ด้านบนพร้อมกับ Body ที่กำหนดไว้ในตารางที่ออกแบบไว้
+    try {
+      await axios.post(HOST + '/register', newUser)
+      navigate("/")
+    } catch (err) {
+      console.error(err)
+      console.log("Something happened while registering the user.")
+    }
+    
   };
 
   const logout = () => {
