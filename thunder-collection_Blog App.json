@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Blog App",
+    "dateExported": "2024-01-16T14:32:52.821Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "aad998ed-8ba0-43ec-b4bb-19f639c70106",
+            "colId": "3fdad14d-3192-43f2-8501-aa27aed005df",
+            "containerId": "",
+            "name": "Register a new user",
+            "url": "localhost:4000/register/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-01-16T12:51:49.687Z",
+            "modified": "2024-01-16T13:04:31.822Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"Jimmy\",\n  \"password\":\"jimmy69\",\n  \"firstName\": \"James\",\n  \"lastName\": \"Komala\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
